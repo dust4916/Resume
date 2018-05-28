@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Website resume</title>
+  <link rel="stylesheet" href="css/init.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+  <div class="main" data-resume="main">
+    <div class="line"><img src="img\line.png"></div>
+    <div class="title">个人简介</div>
+    <div class="box">
+      <div class="person" data-resume="person"><div><img src="img\person.jpg" alt="Loading"></div></div>
+      <ul data-resume='listimg'>
+        <li data-move="true">
+          <div>
+            <a href="#"><img src="img\list_person.png" alt="Loading"></a>
+            <div class="right">
+              <p>性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别： 男</p>
+              <p>出&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;生： 1993年 8月</p>
+              <p>籍&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;贯： 广东汕头</p>
+              <p>家庭住址： 广州市 番禺区 大学城南亭村东社大街一巷八号</p>
+              <p>毕业学校： 广东工业大学</p>
+              <p>专&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;业： 信息工程（应用电子技术方向）</p>
+            </div>
+          </div>
+        </li>
+        <li data-move="true">
+          <div>
+              <a href="#"><img src="img/list_phone.png" alt="Loading"/></a>
+              <div class="right">
+                <p>联系电话：18826418650</p>
+                <p>邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱：bin4916@126.com</p>
+                <p>Q&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Q：505436565</p>
+                <p>微&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;信：dust4916</p>
+              </div>
+          </div>
+        </li>
+        <li data-move="true">
+          <div>
+              <a href="#"><img src="img/list_work.png" alt="Loading"/></a>
+              <div class="right">
+                <p>2015.7-至今</p>
+                <p>广州圣南网络科技有限公司</p>
+                <p>工作内容：</p>
+                <p>UI设计,前端开发助理</p>
+              </div>
+          </div>
+        </li>
+        <li data-move="true">
+          <div>
+              <a href="#"><img src="img/list_project.png" alt="Loading"/></a>
+              <div class="right">
+                <p>Loading</p>
+              </div>
+          </div>
+        </li>
+        <li data-move="true">
+          <div>
+              <a href="#"><img src="img/list_education.png" alt="Loading"/></a>
+              <div class="right">
+                <p>2011.9-2015.7</p>
+                <p>广东工业大学</p>
+                <p>信息工程学院</p>
+                <p>应用电子技术方向</p>
+              </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="motto">
+      <p>让优秀成为</p>
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;你的习惯</p>
+    </div>
+  </div>
+  <script src="js/jquery-1.11.3.js"></script>
+  <script type="text/javascript">
+    var pWidth = $("div[data-resume='main']").css("width");
+    var mainWidth = parseFloat(pWidth);
+// 个人简介字体大小
+    $(".main .title").css("font-size",mainWidth/6+"px");
+    $(".main .motto").css("font-size",mainWidth/8+"px");
+// 小圆初始位置
+      $("ul[data-resume='listimg'] li:first-child").css("left","2%").css("top","25.3%");
+      $("ul[data-resume='listimg'] li:nth-child(2)").css("left","10.1%").css("top","69.8%");
+      $("ul[data-resume='listimg'] li:nth-child(3)").css("left","44.5%").css("top","-3.2%");
+      $("ul[data-resume='listimg'] li:nth-child(4)").css("left","77.8%").css("top","37.1%");
+      $("ul[data-resume='listimg'] li:nth-child(5)").css("left","58.2%").css("top","78.1%");
+// 小圆点击事件
+      $("ul[data-resume='listimg']").on("click","li img",function(e){
+          e.preventDefault();
+          var target= e.target;
+          if( $(target).parent().parent().parent().attr("data-move")=="true"){
+              $(target).parent().parent().parent().attr("data-move","false");
+          }
+          else{
+              $(target).parent().parent().parent().attr("data-move","true")
+          }
+          $(target).parent().parent().parent().toggleClass("stopMove").css("width","23%");
+          $(target).parent().next().toggleClass("open");
+          $(target).parent().parent().parent().siblings().each(function(){
+              $(this).removeClass("stopMove");
+              $(this).attr("data-move","true");
+              $(this).children("div").children("div").removeClass("open")
+          });
+      });
+  </script>
+</body>
+</html>

@@ -19,7 +19,7 @@
   height: 900px;
   margin: 10px auto;
   padding:5%;
-  background-color: #a6d98e;
+  background-color: #b0c4de;
   border-radius: 30px;
   -webkit-border-radius: 30px;
   -moz-border-radius: 30px;
@@ -43,7 +43,7 @@
   width: 100%;
   font-family:'motto','微软雅黑';
   color:#fff;
-  transform: translate(-20pt,60pt);
+  transform: translate(10pt,60pt);
 }
 .main .line{
   position: absolute;
@@ -61,7 +61,7 @@
   z-index：1;
 }
 .main .box .person{
-  background-color: #d2ecc6;
+  background-color: #d8e2ef;
   border-radius: 50%;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;

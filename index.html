@@ -12,6 +12,7 @@
 <body>
   <div class="main" data-resume="main">
     <div class="line"><img src="img\line.png"></div>
+    <div class="name">郑景彬</div>
     <div class="title">个人简介</div>
     <div class="box">
       <div class="person" data-resume="person"><div><img src="img\person.jpg" alt="Loading"></div></div>
@@ -83,6 +84,7 @@
     var mainWidth = parseFloat(pWidth);
 // 个人简介字体大小
     $(".main .title").css("font-size",mainWidth/6+"px");
+        $(".main .name").css("font-size",mainWidth/13+"px");
     $(".main .motto").css("font-size",mainWidth/8+"px");
 // 小圆初始位置
       $("ul[data-resume='listimg'] li:first-child").css("left","2%").css("top","25.3%");
